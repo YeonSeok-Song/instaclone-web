@@ -1,7 +1,13 @@
 **Instacline Web**
 
 ## SET UP
-- [ ] Router
-- [ ] Authentication
-- [ ] Architecture
-- [ ] Style
+- [x] Router
+- [x] Authentication
+- [x] Architecture
+- [x] Style
+
+## Component
+- [x] Log In / Sign Up
+- [ ] Feed
+- [ ] Profile
+- [ ] See Hashtag
