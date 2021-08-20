@@ -8,10 +8,13 @@ import Home from "./screens/Home";
 import { ApolloProvider, useReactiveVar } from "@apollo/client";
 import routes from "./routes";
 import { HelmetProvider } from "react-helmet-async";
+import HeaderLayout from "./components/HeaderLayout";
+import Profile from "./screens/Profile";
 
 function App() {
   const isLoggedIn = useReactiveVar(isLoggedInVar);
   const darkMode = useReactiveVar(darkModeVar);
+  
   return (
     <ApolloProvider client = {client}>
       <HelmetProvider>
@@ -20,13 +23,28 @@ function App() {
           <Router>
             <Switch>
               <Route path={routes.home} exact>
-                {isLoggedIn ? <Home /> : <Login />}
+                {isLoggedIn ? (
+                  <HeaderLayout>
+                    <Home/>
+                  </HeaderLayout>
+                ) : (
+                  <Login />
+                )}
               </Route>
               {!isLoggedIn ? (
                 <Route path={routes.signUp}>
                   <SignUp />
                 </Route>
               ) : null}
+              <Route path={`/users/:userName`}>
+                {isLoggedIn ? (
+                  <HeaderLayout>
+                    <Profile />
+                  </HeaderLayout>
+                ) : (
+                  <Login />
+                )}
+              </Route>
               <Router>
                 404 Not found.
               </Router>

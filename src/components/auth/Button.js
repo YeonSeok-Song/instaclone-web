@@ -7,7 +7,7 @@ export const Button = styled.button`
   background-color: ${(props) => props.theme.accent};
   color: white;
   text-align: center;
-  padding: 8px 0px;
+  padding: 8px;
   font-weight: 600;
   width : 100%;
   border-radius: 3px;
