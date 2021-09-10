@@ -8,6 +8,6 @@
 
 ## Component
 - [x] Log In / Sign Up
-- [ ] Feed
-- [ ] Profile
-- [ ] See Hashtag
+- [x] Feed
+- [x] Profile
+- [x] See Hashtag
